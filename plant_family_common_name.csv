@@ -1,31 +1,31 @@
-﻿name,common_name,jpg_url
-"APIACEAE',",Carrot family,https://en.wikipedia.org/wiki/Apiaceae
-"ASTERACEAE',",Daisy family,https://en.wikipedia.org/wiki/Asteraceae
-"BORAGINACEAE',",Forget-me-not family,https://en.wikipedia.org/wiki/Boraginaceae
-"BRASSICACEAE',","Mustards, cabbage family",https://en.wikipedia.org/wiki/Brassicaceae
-"CHENOPODIACEAE',",Goosefoot family,https://en.wikipedia.org/wiki/Chenopodiaceae
-"CUPRESSACEAE',",Conifer family,https://en.wikipedia.org/wiki/Cupressacea
-"CYPERACEAE',",Sedges family,https://en.wikipedia.org/wiki/Cyperaceae
-"EUPHORBIACEAE',",Spurge family,https://en.wikipedia.org/wiki/Euphorbiaceae
-"FABACEAE',",Legume family,https://en.wikipedia.org/wiki/Fabaceae
-"FAGACEAE',",Oak family,https://en.wikipedia.org/wiki/Fagaceae
-"GROSSULARIACEAE',",Ribes family,https://en.wikipedia.org/wiki/Ribes
-"HYDRANGEACEAE',",Hydrangea family,https://en.wikipedia.org/wiki/Hydrangeaceae
-"HYDROPHYLLACEAE',",Boraginaceae family,https://en.wikipedia.org/wiki/Hydrophylloideae
-"JUGLANDACEAE',",Walnut family,https://en.wikipedia.org/wiki/Juglandaceae
-"JUNCACEAE',",Rush family,https://en.wikipedia.org/wiki/Juncaceae
-"LAMIACEAE',",Mint family,https://en.wikipedia.org/wiki/Lamiaceae
-"OLEACEAE',",Lamiales family,https://en.wikipedia.org/wiki/Oleaceae
-"PINACEAE',",Cedar family,https://en.wikipedia.org/wiki/Pinaceae
-"POACEAE',",Grasses family,https://en.wikipedia.org/wiki/Poaceae
-"POLYGONACEAE',",Knotweed family,https://en.wikipedia.org/wiki/Polygonaceae
-"PRIMULACEAE',",Primrose family,https://en.wikipedia.org/wiki/Primulaceae
-"RHAMNACEAE',",Buckthorn family,https://en.wikipedia.org/wiki/Rhamnaceae
-"ROSACEAE',",Rose family,https://en.wikipedia.org/wiki/Rosaceae
-"SALICACEAE',",Willow family,https://en.wikipedia.org/wiki/Salicaceae
-"SARRACENIACEAE',",Pitcher family,https://en.wikipedia.org/wiki/Sarraceniaceae
-"SAXIFRAGACEAE',",Saxifragaceae,https://en.wikipedia.org/wiki/Saxifragaceae
-"SCROPHULARIACEAE',",Figwort family,https://en.wikipedia.org/wiki/Scrophulariaceae
-"SOLANACEAE',",Nightshades family,https://en.wikipedia.org/wiki/Solanaceae
-"TAXODIACEAE',",Coniferous Trees family,https://en.wikipedia.org/wiki/Taxodiaceae
-ZYGOPHYLLACEAE',Zygophyllaceae,https://en.wikipedia.org/wiki/Zygophyllaceae
+name	common_name	jpg_url
+"APIACEAE',"	Carrot family	https://en.wikipedia.org/wiki/Apiaceae
+"ASTERACEAE',"	Daisy family	https://en.wikipedia.org/wiki/Asteraceae
+"BORAGINACEAE',"	Forget-me-not family	https://en.wikipedia.org/wiki/Boraginaceae
+"BRASSICACEAE',"	"Mustards, cabbage family"	https://en.wikipedia.org/wiki/Brassicaceae
+"CHENOPODIACEAE',"	Goosefoot family	https://en.wikipedia.org/wiki/Chenopodiaceae
+"CUPRESSACEAE',"	Conifer family	https://en.wikipedia.org/wiki/Cupressacea
+"CYPERACEAE',"	Sedges family	https://en.wikipedia.org/wiki/Cyperaceae
+"EUPHORBIACEAE',"	Spurge family	https://en.wikipedia.org/wiki/Euphorbiaceae
+"FABACEAE',"	Legume family	https://en.wikipedia.org/wiki/Fabaceae
+"FAGACEAE',"	Oak family	https://en.wikipedia.org/wiki/Fagaceae
+"GROSSULARIACEAE',"	Ribes family	https://en.wikipedia.org/wiki/Ribes
+"HYDRANGEACEAE',"	Hydrangea family	https://en.wikipedia.org/wiki/Hydrangeaceae
+"HYDROPHYLLACEAE',"	Boraginaceae family	https://en.wikipedia.org/wiki/Hydrophylloideae
+"JUGLANDACEAE',"	Walnut family	https://en.wikipedia.org/wiki/Juglandaceae
+"JUNCACEAE',"	Rush family	https://en.wikipedia.org/wiki/Juncaceae
+"LAMIACEAE',"	Mint family	https://en.wikipedia.org/wiki/Lamiaceae
+"OLEACEAE',"	Lamiales family	https://en.wikipedia.org/wiki/Oleaceae
+"PINACEAE',"	Cedar family	https://en.wikipedia.org/wiki/Pinaceae
+"POACEAE',"	Grasses family	https://en.wikipedia.org/wiki/Poaceae
+"POLYGONACEAE',"	Knotweed family	https://en.wikipedia.org/wiki/Polygonaceae
+"PRIMULACEAE',"	Primrose family	https://en.wikipedia.org/wiki/Primulaceae
+"RHAMNACEAE',"	Buckthorn family	https://en.wikipedia.org/wiki/Rhamnaceae
+"ROSACEAE',"	Rose family	https://en.wikipedia.org/wiki/Rosaceae
+"SALICACEAE',"	Willow family	https://en.wikipedia.org/wiki/Salicaceae
+"SARRACENIACEAE',"	Pitcher family	https://en.wikipedia.org/wiki/Sarraceniaceae
+"SAXIFRAGACEAE',"	Saxifragaceae	https://en.wikipedia.org/wiki/Saxifragaceae
+"SCROPHULARIACEAE',"	Figwort family	https://en.wikipedia.org/wiki/Scrophulariaceae
+"SOLANACEAE',"	Nightshades family	https://en.wikipedia.org/wiki/Solanaceae
+"TAXODIACEAE',"	Bald Cypress family	https://en.wikipedia.org/wiki/Taxodiaceae
+ZYGOPHYLLACEAE'	Creosote Bush family	https://en.wikipedia.org/wiki/Zygophyllaceae
