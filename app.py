@@ -7,14 +7,16 @@ import json
 import pymongo
 
 # Debugging variables
-flask_debugging = True  # Set to True when in Flask debug mode (DISABLE BEFORE DEPLOYING LIVE)
+flask_debugging = False  # Set to True when in Flask debug mode (DISABLE BEFORE DEPLOYING LIVE)
 
 # Initialize Flask
 app = Flask(__name__)
 mongo = PyMongo(app)
-conn = 'mongodb://localhost:27017'
+#conn = 'mongodb://localhost:27017'
+conn = 'mongodb://heroku_v48x034t:jio36bl8srlsqnvufrlieuk9jt@ds241025.mlab.com:41025/heroku_v48x034t'
+
 client = pymongo.MongoClient(conn)
-db = client.comboPlantsDB
+db = client.v48x034t
 #collection = db.myCollection
 
 #MONGODB_URI = os.environ.get('MONGODB_URI')
@@ -23,19 +25,13 @@ db = client.comboPlantsDB
 
 #app.config['MONGO_URI'] = MONGODB_URI
 
-
+# Home page
 @app.route("/")
 def index():
     """Return the homepage."""
     return render_template('index.html')
 
-@app.route('/test/<abc>')
-def getTest(abc):
-    mess = 'This works'+ abc
-    return jsonify(mess)    
-
-
-# Route that outputs database results
+# Route that returns database results
 @app.route('/families/<family>')
 def getData(family):
     """ Retrieve & return all species records for a family from the MongoDB collection 
@@ -49,19 +45,7 @@ def getData(family):
             result['decimalLongitude'],result['habitat'],result['eventDate'],result['identifiedBy'],\
             result['recordedBy'], result['county'], result['accessURI'], result['thumbnailAccessURI']])
         except:
-            continue 
-          
-    #db = comboPlantsDB
-     
-    #results = db.myCollection.find({'family':family})
-    #familyList = []
-    #for result in results:
-     #   try:
-      #      familyList.append([result['id'], result['scientificName'],result['decimalLatitude'],\
-      #      result['decimalLongitude'],result['habitat'],result['eventDate'],result['identifiedBy'],\
-       #     result['recordedBy'], result['county'], result['accessURI'], result['thumbnailAccessURI']])
-        #except:
-         #   continue    
+            continue             
     return jsonify(familyList)
 
 

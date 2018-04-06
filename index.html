@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Basic Map</title>
+  <title>UT Plants</title>
 
   <!-- Leaflet CSS & JS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
@@ -11,24 +11,33 @@
   <!-- Our CSS -->
  <!-- <link rel="stylesheet" type="text/css" href="style.css">-->
 
-  <!-- D3 -->
+ <!-- Bootstrap -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   --> 
+<!-- D3 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
 
   <!-- Random Color -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.min.js"></script>
 
-  <style>
+ <style>
       body {
-  padding: 0;
-  margin: 0;
-}
+        padding: 0;
+        margin: 0;
+      }   
 
 /* set map, body, and html to 100% of the screen size */
-#map,
-body,
-html {
-  height: 100%;
-}
+      #map,body,html {
+        height: 100%;
+        margin: 10px;
+      }
   </style>
 </head>
 
@@ -38,7 +47,7 @@ html {
                 <div class="container">
                         <div class="jumbotron text-center"  id = "jumbo" style="margin-top: 20px">
                                 
-                            <h1>UT Plant Collection</h1>
+                            <h1>UT Plant Collection<br>Billie L. Turner Plant Resources Centerxx</h1>
                                     
                         </div>
                 </div> 
@@ -66,11 +75,10 @@ html {
   
   var myMap = L.map("map", {
   center:[32, -97.0059],
-  zoom: 7
+  zoom: 6
 });
 
-// Adding a tile layer (the background map image) to our map
-// We use the addTo method to add objects to our map
+// Adding a tile layer to the map
 L.tileLayer(
   "https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
     "access_token=pk.eyJ1IjoianN3eWVycyIsImEiOiJjamRoazc4dTkwem1mMnZucXVzbWM4cmUwIn0.ZmFC4Am6nFR2_e1Q8jg6Fg"
@@ -80,49 +88,45 @@ var baseMaps = {
         "Lightmap": myMap
     };
 
-function getData(family) {
-        // Use a request to grab the json data needed for the map and image div
+// Use a request to grab the json data from MongoDB
+function getData(family) {        
         url = `/families/${family}` 
         d3.json(url, function(error, response) {
             if (error) return console.warn(error);
-            console.log(response);
-            updateMap(response);
-
-      
-
-
+            //console.log(response);
+            updateMap(response);      
         });
     };
 
 var families = ['Apiaceae',
-'Asteraceae',
-'Boraginaceae',
-'Brassicaceae',
-'Chenopodiaceae',
-'Cupressaceae',
-'Cyperaceae',
-'Euphorbiaceae',
-'Fabaceae',
-'Fagaceae',
-'Grossulariaceae',
-'Hydrangeaceae',
-'Hydrophyllaceae',
-'Juglandaceae',
-'Juncaceae',
-'Lamiaceae',
-'Oleaceae',
-'Pinaceae',
-'Poaceae',
-'Polygonaceae',
-'Primulaceae',
-'Rhamnaceae',
-'Rosaceae',
-'Salicaceae',
-'Sarraceniaceae',
-'Saxifragaceae',
-'Scrophulariaceae',
-'Solanaceae',
-'Taxodiaceae',
+  'Asteraceae',
+  'Boraginaceae',
+ 'Brassicaceae',
+ 'Chenopodiaceae',
+ 'Cupressaceae',
+ 'Cyperaceae',
+ 'Euphorbiaceae',
+ 'Fabaceae',
+ 'Fagaceae',
+ 'Grossulariaceae',
+ 'Hydrangeaceae',
+ 'Hydrophyllaceae',
+ 'Juglandaceae',
+ 'Juncaceae',
+ 'Lamiaceae',
+ 'Oleaceae',
+ 'Pinaceae',
+ 'Poaceae',
+ 'Polygonaceae',
+ 'Primulaceae',
+ 'Rhamnaceae',
+ 'Rosaceae',
+ 'Salicaceae',
+ 'Sarraceniaceae',
+ 'Saxifragaceae',
+ 'Scrophulariaceae',
+ 'Solanaceae',
+ 'Taxodiaceae',
 'Zygophyllaceae']
   
 // Build dropdown selections
@@ -133,7 +137,7 @@ for (var i = 0; i < families.length;  i++) {
     currentOption.value = families[i]
     selector.appendChild(currentOption);
 };
-
+// Add species markers and overlay when family is chosen by dropdown
 function updateMap(newFamily) {
     var reducedFamily = [];
     for (var i = 0; i<newFamily.length; i ++) { 
@@ -146,22 +150,17 @@ function updateMap(newFamily) {
         if (a[1] > b[1]) return 1;
         return 0;
     };
-
+  // Eliminate objects missing lat/long from marker array and sort by species name
     var sortedFamily = reducedFamily.sort(Comparator);
-    
     var currentSpecies = sortedFamily[0][1];
     var speciesLayer = [];
-
     var overlayMaps = {};
     var currentSpeciesName = '';
-
     
-
    // Cycle through species
+   // Use random seed to keep color constant for species marker array
     var colorSeed = 1;
-    for (i = 0; i < sortedFamily.length; i ++) {
-      
-
+    for (i = 0; i < sortedFamily.length; i ++) {      
         if (sortedFamily[i][1] == currentSpecies) {
             var circle = L.circleMarker([sortedFamily[i][2],sortedFamily[i][3]],
                 {radius:8,
@@ -214,13 +213,9 @@ function updateMap(newFamily) {
         }; 
     };  
     
-    var finalMap = L.control.layers(baseMaps,overlayMaps,{
-  collapsed: false
-});
+    var finalMap = L.control.layers(baseMaps,overlayMaps,{collapsed: false});
     finalMap.addTo(myMap);
 };
-
-
   </script>
 </body>
 </html>
